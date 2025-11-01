@@ -32,5 +32,10 @@ DWORD Decrypt::CIndex(DWORD encrypted_id)
     // Corresponds to: complex_part ^ rotated_part ^ 0x1AD9281
     return complex_part ^ rotated_part ^ key2_final;
 }
+2025.11.1
+DWORD Decrypt::CIndex(DWORD value)
+{
+    return (((value ^ 0xC7C846D) << 26) | ((value ^ 0xC7C846Du) >> 6) & 0x3FF0000) ^ _rotr(value ^ 0xC7C846D, 22) ^ 0xCE1353CB;
+}
 ```
 
