@@ -37,5 +37,10 @@ DWORD Decrypt::CIndex(DWORD value)
 {
     return (((value ^ 0xC7C846D) << 26) | ((value ^ 0xC7C846Du) >> 6) & 0x3FF0000) ^ _rotr(value ^ 0xC7C846D, 22) ^ 0xCE1353CB;
 }
+2025.11.5
+DWORD Decrypt::CIndex(DWORD value)
+{
+    return (16 * value) & 0xFFFF0000 ^ _rotr(value ^ 0x426749E3, 12) ^ 0xDF75B4A6;
+}
 ```
 
