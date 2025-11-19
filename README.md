@@ -51,5 +51,36 @@ DWORD Decrypt::CIndex(DWORD value)
     // (v13 ^ 0xECED5D70)
     return (v13 ^ 0xECED5D70);
 }
+2025.11.19
+纯纯代码：
+DWORD Decrypt::CIndex(DWORD value)
+{
+    // Key1 = 0x43FD4C92
+    // Sval = 30 (0x1E)
+    // Dval = 2
+    // Mask = 0x3FFF0000
+    // Rval = 18 (0x12)
+    // Key2 = 0xC207C55F
+
+    auto temp = value ^ 0x43FD4C92;
+    auto v13 = ((temp << 30) | (temp >> 2) & 0x3FFF0000) ^ _rotr(temp, 18);
+    return (v13 ^ 0xC207C55F);
+}
+云更新：
+DWORD Decrypt::CIndex(DWORD encrypted_id)
+{
+    // 基础异或
+    DWORD xor_result = encrypted_id ^ DecryptNameIndexXorKey1; 
+    
+    // 组合部分: ((X^K1) << Sval) | ((X^K1 >> Dval) & Mask)
+    DWORD left_part = xor_result << DecryptNameIndexSval;
+    DWORD right_part = (xor_result >> DecryptNameIndexDval) & DecryptNameIndexXorKey3;
+    
+    // 旋转部分
+    DWORD rotated_part = _rotr(xor_result, DecryptNameIndexRval);
+
+    // 最终组合
+    return left_part | right_part ^ rotated_part ^ DecryptNameIndexXorKey2;
+}
 ```
 
