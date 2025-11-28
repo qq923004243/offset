@@ -16,14 +16,13 @@ constexpr uint64_t PlayerCameraManager = 0x4E8;
 constexpr uint64_t ObjID = 0xC;
 
 // --- 解密相关参数 (已更新) ---
-constexpr uint64_t DecryptNameIndexRor = 0x1;
-constexpr uint64_t DecryptNameIndexXorKey1 = 0x5BBF163A;
-constexpr uint64_t DecryptNameIndexXorKey2 = 0x980A92;
-constexpr uint64_t DecryptNameIndexXorKey3 = 0xFFFF0000;
-constexpr uint64_t DecryptNameIndexRval = 0xD;          // 13
-constexpr uint64_t DecryptNameIndexSval = 0x1F;         // 31
-constexpr uint64_t DecryptNameIndexDval = 0x3;          // 3
-constexpr uint64_t DecryptNameIndexAval = 0x1A;         // (保留项)
+constexpr uint64_t DecryptNameIndexRor = 0x1;        // 1  表示使用 __ROR4__
+constexpr uint64_t DecryptNameIndexXorKey1 =  0xB6F130D5; // 第一步异或密钥
+constexpr uint64_t DecryptNameIndexXorKey2 = 0xBA900089; // 最后异或密钥
+constexpr uint64_t DecryptNameIndexXorKey3 = 0x7FFF0000; // 右移后掩码
+constexpr uint64_t DecryptNameIndexRval = 0x11;       // 17 位循环右移
+constexpr uint64_t DecryptNameIndexSval  = 0x1F;       // 31 位左移
+constexpr uint64_t DecryptNameIndexDval  =  0x1;        // 1  位右移
 // ---------------------------
 
 constexpr uint64_t ViewTarget = 0x490;
