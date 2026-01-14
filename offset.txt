@@ -1,98 +1,101 @@
-constexpr uint64_t XenuineDecrypt = 0xF78E628;
-constexpr uint64_t UWorld = 0x10E1B358;
-constexpr uint64_t GNames = 0x11069D60;
-constexpr uint64_t GNamesPtr = 0x10;
-constexpr uint64_t ChunkSize = 0x4020;
-constexpr uint64_t CurrentLevel = 0x8B0;
-constexpr uint64_t Actors = 0x108;
-constexpr uint64_t GameInstance = 0x6F0;
-constexpr uint64_t GameState = 0x788;
-constexpr uint64_t LocalPlayer = 0xF0;
-constexpr uint64_t PlayerController = 0x38;
-constexpr uint64_t AcknowledgedPawn = 0x4C0;
-constexpr uint64_t PlayerCameraManager = 0x4E8;
+// ========== 基础全局 ==========
+constexpr uint64_t XenuineDecrypt= 0xF636528;
+constexpr uint64_t UWorld= 0x10D42758;
+constexpr uint64_t GNames= 0x10F91300;
+constexpr uint64_t GNamesPtr  = 0x10;
+constexpr uint64_t ChunkSize  = 0x412C;
+constexpr uint64_t GObjects   = 0x10D038A0;
+constexpr uint64_t CurrentLevel  = 0xA00;
+constexpr uint64_t Actors= 0x1A8;
+constexpr uint64_t ActorsForGC   = 0x1D0;
+constexpr uint64_t GameInstance  = 0x48;
+constexpr uint64_t GameState  = 0x928;
+constexpr uint64_t LocalPlayer   = 0xF0;
+constexpr uint64_t PlayerController   = 0x38;
+constexpr uint64_t AcknowledgedPawn   = 0x4A8;
+constexpr uint64_t PlayerCameraManager   = 0x4D0;
 constexpr uint64_t ObjID = 0xC;
 
-// --- 解密相关 ---
-constexpr uint64_t DecryptNameIndexRor = 0x1;
-constexpr uint64_t DecryptNameIndexXorKey1 = 0xB4937162;
-constexpr uint64_t DecryptNameIndexXorKey2 = 0x56E004EC;
+// ========== 解密相关 ==========
+constexpr uint64_t DecryptNameIndexRor  = 0x1;
+constexpr uint64_t DecryptNameIndexXorKey1 = 0xD74E01F9;
+constexpr uint64_t DecryptNameIndexXorKey2 = 0x8A1E921B;
 constexpr uint64_t DecryptNameIndexXorKey3 = 0xFFFF0000;
-constexpr uint64_t DecryptNameIndexRval = 0x10;
-constexpr uint64_t DecryptNameIndexSval = 0x0;
+constexpr uint64_t DecryptNameIndexRval = 0x3;
+constexpr uint64_t DecryptNameIndexSval = 0xD;
 constexpr uint64_t DecryptNameIndexDval = 0x0;
 
-// --- 相机与视角 ---
-constexpr uint64_t ViewTarget = 0xA20;
-constexpr uint64_t CameraCacheLocation = 0x9FC;
-constexpr uint64_t CameraCacheRotation = 0x9E0;
-constexpr uint64_t CameraCacheFOV = 0x9EC;
+// ========== 相机与视角 ==========
+constexpr uint64_t ViewTarget = 0xA60;
+constexpr uint64_t CameraCacheLocation   = 0x4D4;
+constexpr uint64_t CameraCacheRotation   = 0x4C4;
+constexpr uint64_t CameraCacheFOV= 0x4B8;
 
-// --- 游戏状态/队伍 ---
-constexpr uint64_t LastTeamNum = 0x12A8;
-constexpr uint64_t TeamNumber = 0x500;
-constexpr uint64_t NumAliveTeams = 0x558;
+// ========== 游戏状态/队伍 ==========
+constexpr uint64_t LastTeamNum   = 0x2BF8;
+constexpr uint64_t TeamNumber = 0x510;
+constexpr uint64_t NumAliveTeams = 0x51C;
 constexpr uint64_t SafetyZonePosition = 0xB0;
-constexpr uint64_t SafetyZoneRadius = 0xBC;
-constexpr uint64_t BlueZoneRadius = 0xCC;
-constexpr uint64_t BlueZonePosition = 0xC0;
-constexpr uint64_t TimeSeconds = 0xA00;
+constexpr uint64_t SafetyZoneRadius   = 0xBC;
+constexpr uint64_t BlueZoneRadius= 0xCC;
+constexpr uint64_t BlueZonePosition   = 0xC0;
+constexpr uint64_t TimeSeconds   = 0x258;
 
-// --- UI与输入 ---
-constexpr uint64_t MyHUD = 0x4E0;
-constexpr uint64_t BlockInputWidgetList = 0x5C8;
-constexpr uint64_t bShowMouseCursor = 0x670;
-constexpr uint64_t WidgetStateMap = 0x550;
+// ========== UI与输入 ==========
+constexpr uint64_t MyHUD = 0x4C8;
+constexpr uint64_t BlockInputWidgetList  = 0x5B8;
+constexpr uint64_t bShowMouseCursor   = 0x658;
+constexpr uint64_t WidgetStateMap= 0x540;
 constexpr uint64_t LayoutData = 0x40;
 constexpr uint64_t Offsets = 0x0;
-constexpr uint64_t Alignment = 0x20;
+constexpr uint64_t Alignment  = 0x20;
 constexpr uint64_t Visibility = 0xA9;
-constexpr uint64_t SelectMinimapSizeIndex = 0x5D8;
-constexpr uint64_t Slot = 0x38;
-constexpr uint64_t MouseX = 0x498F;
-constexpr uint64_t MouseY = 0x4990;
-constexpr uint64_t InputYawScale = 0x664;
-constexpr uint64_t PlayerInput = 0x560;
-constexpr uint64_t InputAxisProperties = 0x138;
+constexpr uint64_t SelectMinimapSizeIndex= 0x5D8;
+constexpr uint64_t Slot  = 0x38;
+constexpr uint64_t MouseX= 0x498F;
+constexpr uint64_t MouseY= 0x4990;
+constexpr uint64_t InputYawScale = 0x64C;
+constexpr uint64_t PlayerInput   = 0x548;
+constexpr uint64_t InputAxisProperties   = 0x138;
 
-// --- 角色属性 ---
-constexpr uint64_t ComponentLocation = 0x2D0;
-constexpr uint64_t ComponentToWorld = 0x2C0;
-constexpr uint64_t CharacterState = 0x15AC;
-constexpr uint64_t CharacterName = 0x1908;
-constexpr uint64_t CharacterMovement = 0x538;
+// ========== 角色属性 ==========
+constexpr uint64_t ComponentLocation  = 0x300;
+constexpr uint64_t ComponentToWorld   = 0x2F0;
+constexpr uint64_t CharacterState= 0x12A8;
+constexpr uint64_t CharacterName = 0x16D8;
+constexpr uint64_t CharacterMovement  = 0x6B8;
 constexpr uint64_t LastUpdateVelocity = 0x3E0;
-constexpr uint64_t Mesh = 0x660;
-constexpr uint64_t RootComponent = 0xF8;
+constexpr uint64_t Mesh  = 0x7B8;
+constexpr uint64_t RootComponent = 0x1D0;
 constexpr uint64_t StaticMesh = 0xAE8;
-constexpr uint64_t Eyes = 0x75C;
+constexpr uint64_t Eyes  = 0x75C;
 constexpr uint64_t bAlwaysCreatePhysicsState = 0x498;
-constexpr uint64_t PreEvalPawnState = 0x700;
+constexpr uint64_t PreEvalPawnState   = 0x700;
 constexpr uint64_t AnimScriptInstance = 0xE30;
-constexpr uint64_t AntiCheatCharacterSyncManager = 0x820;
-constexpr uint64_t CharacterClanInfo = 0x780;
+constexpr uint64_t AntiCheatCharacterSyncManager = 0xDD0;
+constexpr uint64_t CharacterClanInfo  = 0x718;
 
-// --- 血量 (保留以兼容旧代码) ---
-constexpr uint64_t HeaFlag = 0x3D0;
-constexpr uint64_t Health1 = 0xA60;
-constexpr uint64_t Health2 = 0x9D0;
-constexpr uint64_t Health3 = 0x984;
-constexpr uint64_t Health4 = 0x970;
-constexpr uint64_t Health5 = 0x985;
-constexpr uint64_t Health6 = 0x980;
-constexpr uint64_t GroggyHealth = 0x1290;
+// ========== 血量(兼容旧代码) ==========
+constexpr uint64_t HeaFlag = 0x368;
+constexpr uint64_t Health1 = 0xA40;
+constexpr uint64_t Health2 = 0xA30;
+constexpr uint64_t Health3 = 0xA5C;
+constexpr uint64_t Health4 = 0xA48;
+constexpr uint64_t Health5 = 0xA5D;
+constexpr uint64_t Health6 = 0xA58;
+constexpr uint64_t GroggyHealth  = 0x1210;
 
-// --- 血量解密Keys (已更新) ---
-constexpr uint64_t Health_keys0 = 0xCEC7A598;
-constexpr uint64_t Health_keys1 = 0x9B63B220;
-constexpr uint64_t Health_keys2 = 0xCA5B44BC;
-constexpr uint64_t Health_keys3 = 0x203848C3;
-constexpr uint64_t Health_keys4 = 0x44911D0A;
-constexpr uint64_t Health_keys5 = 0x23DDAA02;
-constexpr uint64_t Health_keys6 = 0x945C3C8;
-constexpr uint64_t Health_keys7 = 0xBC38B121;
-constexpr uint64_t Health_keys8 = 0xBAA7A58;
-constexpr uint64_t Health_keys9 = 0xA9EF2087;
+// ========== 血量解密Keys ==========
+constexpr uint64_t Health_keys0  = 0xCEC7A598;
+constexpr uint64_t Health_keys1  = 0x9B63B220;
+constexpr uint64_t Health_keys2  = 0xCA5B44BC;
+constexpr uint64_t Health_keys3  = 0x203848C3;
+constexpr uint64_t Health_keys4  = 0x44911D0A;
+constexpr uint64_t Health_keys5  = 0x23DDAA02;
+constexpr uint64_t Health_keys6  = 0x0945C3C8;
+constexpr uint64_t Health_keys7  = 0xBC38B121;
+constexpr uint64_t Health_keys8  = 0x0BAA7A58;
+constexpr uint64_t Health_keys9  = 0xA9EF2087;
 constexpr uint64_t Health_keys10 = 0xE27535B1;
 constexpr uint64_t Health_keys11 = 0x9E8ADB58;
 constexpr uint64_t Health_keys12 = 0xBD44E5D5;
@@ -100,86 +103,109 @@ constexpr uint64_t Health_keys13 = 0x2093C307;
 constexpr uint64_t Health_keys14 = 0xC3099E38;
 constexpr uint64_t Health_keys15 = 0xE5D02AFA;
 
-// --- 玩家信息 ---
-constexpr uint64_t PlayerArray = 0x428;
-constexpr uint64_t AccountId = 0x710;
-constexpr uint64_t PlayerName = 0x450;
-constexpr uint64_t PlayerStatusType = 0x464;
-constexpr uint64_t SquadMemberIndex = 0x740;
-constexpr uint64_t PlayerState = 0x438;
-constexpr uint64_t PlayerStatistics = 0x72C;
-constexpr uint64_t DamageDealtOnEnemy = 0x4A8;
-constexpr uint64_t SpectatedCount = 0xE3C;
-constexpr uint64_t PartnerLevel = 0x4D6;
-constexpr uint64_t SurvivalTier = 0xC78;
-constexpr uint64_t SurvivalLevel = 0xC7C;
+// ========== 玩家信息 ==========
+constexpr uint64_t PlayerArray = 0x418;
+constexpr uint64_t AccountId   = 0x4F8;
+constexpr uint64_t PlayerName  = 0x438;
+constexpr uint64_t PlayerStatusType = 0x400;
+constexpr uint64_t SquadMemberIndex = 0x50C;
+constexpr uint64_t PlayerState = 0x430;
+constexpr uint64_t PlayerStatistics = 0x6D0;
+constexpr uint64_t DamageDealtOnEnemy  = 0xA1C;
+constexpr uint64_t SpectatedCount   = 0xFA8;
+constexpr uint64_t PartnerLevel= 0x546;
+constexpr uint64_t SurvivalTier= 0xC58;
+constexpr uint64_t SurvivalLevel = 0xC5C;
 
-// --- 武器与物品 ---
-constexpr uint64_t EquippedWeapons = 0x208;
-constexpr uint64_t WeaponProcessor = 0x9A8;
-constexpr uint64_t CurrentWeaponIndex = 0x319;
-constexpr uint64_t WeaponTrajectoryData = 0x1170;
-constexpr uint64_t TrajectoryGravityZ = 0x1104;
-constexpr uint64_t FiringAttachPoint = 0x8C0;
-constexpr uint64_t ScopingAttachPoint = 0xB00;
+// ========== 武器与物品 ==========
+constexpr uint64_t EquippedWeapons= 0x208;
+constexpr uint64_t WeaponProcessor= 0xA28;
+constexpr uint64_t CurrentWeaponIndex  = 0x319;
+constexpr uint64_t WeaponTrajectoryData   = 0x1128;
+constexpr uint64_t TrajectoryGravityZ  = 0x1070;
+constexpr uint64_t FiringAttachPoint   = 0x8B0;
+constexpr uint64_t ScopingAttachPoint  = 0xD30;
 constexpr uint64_t TrajectoryConfig = 0x108;
 constexpr uint64_t BallisticCurve = 0x28;
 constexpr uint64_t FloatCurves = 0x38;
-constexpr uint64_t Mesh3P = 0x810;
-constexpr uint64_t Keys = 0x60;
+constexpr uint64_t Mesh3P = 0x800;
+constexpr uint64_t Keys   = 0x60;
 constexpr uint64_t AttachedStaticComponentMap = 0x1508;
-constexpr uint64_t WeaponConfig_WeaponClass = 0x5C0;
-constexpr uint64_t ElapsedCookingTime = 0xBF8;
-constexpr uint64_t DroppedItemGroup = 0x158;
-constexpr uint64_t ItemPackageItems = 0x5A8;
-constexpr uint64_t DroppedItemGroupUItem = 0x880;
-constexpr uint64_t AttachedItems = 0x868;
+constexpr uint64_t WeaponConfig_WeaponClass   = 0x572;
+constexpr uint64_t ElapsedCookingTime = 0xC28;
+constexpr uint64_t DroppedItemGroup = 0x128;
+constexpr uint64_t ItemPackageItems= 0x598;
+constexpr uint64_t DroppedItemGroupUItem   = 0x880;
+constexpr uint64_t AttachedItems   = 0x858;
 constexpr uint64_t WeaponAttachmentData = 0x130;
 constexpr uint64_t ItemTable = 0xB0;
-constexpr uint64_t ItemID = 0x26C;
-constexpr uint64_t DroppedItem = 0x470;
-constexpr uint64_t CurrentAmmoData = 0xB38;
-constexpr uint64_t InventoryFacade = 0x1480;
-constexpr uint64_t Inventory = 0x418;
-constexpr uint64_t InventoryItems = 0x5B8;
-constexpr uint64_t InventoryItemCount = 0x5C0;
+constexpr uint64_t ItemID  = 0x26C;
+constexpr uint64_t DroppedItem  = 0x460;
+constexpr uint64_t CurrentAmmoData = 0xE18;
+constexpr uint64_t InventoryFacade = 0x1140;
+constexpr uint64_t Inventory = 0x420;
+constexpr uint64_t InventoryItems  = 0x5A0;
+constexpr uint64_t InventoryItemCount   = 0x5A8;
 constexpr uint64_t InventoryItemTagItemCount = 0x40;
 
-// --- 武器控制与状态 ---
-constexpr uint64_t bIsScoping_CP = 0x92D;
-constexpr uint64_t bIsReloading_CP = 0x805;
+// ========== 武器控制与状态 ==========
+constexpr uint64_t bIsScoping_CP  = 0x92D;
+constexpr uint64_t bIsReloading_CP   = 0x805;
 constexpr uint64_t RecoilADSRotation_CP = 0x8F4;
-constexpr uint64_t ControlRotation_CP = 0x71C;
-constexpr uint64_t LeanLeftAlpha_CP = 0x764;
+constexpr uint64_t ControlRotation_CP   = 0x71C;
+constexpr uint64_t LeanLeftAlpha_CP  = 0x764;
 constexpr uint64_t LeanRightAlpha_CP = 0x768;
-constexpr uint64_t AimOffsets = 0x1BB8;
-constexpr uint64_t TimeTillExplosion = 0x844;
-constexpr uint64_t ExplodeState = 0x648;
+constexpr uint64_t AimOffsets= 0x1BB8;
+constexpr uint64_t TimeTillExplosion = 0x834;
+constexpr uint64_t ExplodeState   = 0x638;
 
-// --- 静态对象/Socket ---
+// ========== 静态对象/Socket ==========
 constexpr uint64_t StaticSockets = 0xC8;
-constexpr uint64_t StaticSocketName = 0x30;
-constexpr uint64_t StaticRelativeScale = 0x50;
-constexpr uint64_t StaticRelativeLocation = 0x38;
-constexpr uint64_t StaticRelativeRotation = 0x44;
+constexpr uint64_t StaticSocketName   = 0x30;
+constexpr uint64_t StaticRelativeScale   = 0x50;
+constexpr uint64_t StaticRelativeLocation= 0x38;
+constexpr uint64_t StaticRelativeRotation= 0x44;
 
-// --- 载具 ---
-constexpr uint64_t VehicleMovement = 0x488;
-constexpr uint64_t VehicleRiderComponent = 0x2130;
+// ========== 载具 ==========
+constexpr uint64_t VehicleMovement = 0x478;
+constexpr uint64_t VehicleRiderComponent   = 0x2110;
 constexpr uint64_t ReplicatedMovement = 0x78;
 constexpr uint64_t LastVehiclePawn = 0x270;
-constexpr uint64_t SeatIndex = 0x230;
-constexpr uint64_t Wheels = 0x328;
-constexpr uint64_t WheelLocation = 0x100;
-constexpr uint64_t DampingRate = 0x54;
-constexpr uint64_t ShapeRadius = 0x48;
-constexpr uint64_t VehicleCommonComponent = 0xB50;
-constexpr uint64_t FloatingComponent = 0x4F8; // 已更新
-constexpr uint64_t VehicleFuel = 0x2E0;
-constexpr uint64_t VehicleFuelMax = 0x2E4;
-constexpr uint64_t VehicleHealth = 0x2D8;
-constexpr uint64_t VehicleHealthMax = 0x2DC;
+constexpr uint64_t SeatIndex  = 0x230;
+constexpr uint64_t Wheels  = 0x328;
+constexpr uint64_t WheelLocation   = 0x100;
+constexpr uint64_t DampingRate= 0x54;
+constexpr uint64_t ShapeRadius= 0x48;
+constexpr uint64_t VehicleCommonComponent  = 0xB40;
+constexpr uint64_t FloatingVehicleCommonComponent = 0x4E8;
+constexpr uint64_t VehicleFuel= 0x2E0;
+constexpr uint64_t VehicleFuelMax  = 0x2E4;
+constexpr uint64_t VehicleHealth   = 0x2D8;
+constexpr uint64_t VehicleHealthMax   = 0x2DC;
 
-// --- 地图/环境 ---
-constexpr uint64_t MapGrid_Map = 0x4B8; // 对应新列表
-constexpr uint64_t TrainingMapGrid = 0x5C0;
+// ========== 地图/环境 ==========
+constexpr uint64_t MapGrid_Map   = 0x4B8;
+constexpr uint64_t TrainingMapGrid  = 0x5C0;
+constexpr uint64_t FeatureRepObject = 0xD08;
+constexpr uint64_t WorldToMap = 0x218;
+constexpr uint64_t Gender   = 0xAC0;
+constexpr uint64_t MortarRotation   = 0x530;
+constexpr uint64_t MortarEntity  = 0xB0;
+
+// ========== 其他杂项 ==========
+constexpr uint64_t SPOOFCALL   = 0x254EEF5;
+constexpr uint64_t LineTraceSingle= 0xBA36E68;
+constexpr uint64_t HOOK   = 0x108158F0;
+constexpr uint64_t HOOK_TWO = 0xA87ABA;
+constexpr uint64_t PhysxSDK = 0x108B7508;
+constexpr uint64_t PhysicsScene   = 0x780;
+constexpr uint64_t mPhysXScene = 0xD0;
+constexpr uint64_t rigid_dynamics = 0x3B98;
+constexpr uint64_t Unreal_Engine  = 0x10D3EA60;
+
+// ========== 小地图/后坐力 ==========
+constexpr uint64_t CurrentMinimapViewScale1D = 0x49C;
+constexpr uint64_t LastMinimapPos = 0x4B0;
+constexpr uint64_t Minimap= 0x490;
+constexpr uint64_t RecoilValueVector = 0x1060;
+constexpr uint64_t VerticalRecovery  = 0x1030;
